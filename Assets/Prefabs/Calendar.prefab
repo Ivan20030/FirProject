@@ -437,6 +437,7 @@ GameObject:
   - component: {fileID: 2793991957340409068}
   - component: {fileID: 9084525073320719720}
   - component: {fileID: 593559587611080459}
+  - component: {fileID: 3575107418386496761}
   m_Layer: 5
   m_Name: Month
   m_TagString: Untagged
@@ -505,6 +506,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u041D\u043E\u044F\u0431\u0440\u044C\n"
+--- !u!114 &3575107418386496761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3999326781537190994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4600307320403010501
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +532,7 @@ GameObject:
   - component: {fileID: 570610381873853767}
   - component: {fileID: 9182970969911016785}
   - component: {fileID: 5352733767344470147}
+  - component: {fileID: 6777404258152058417}
   m_Layer: 5
   m_Name: Label_Today
   m_TagString: Untagged
@@ -584,6 +601,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u0421\u0435\u0439\u0447\u0430\u0441:"
+--- !u!114 &6777404258152058417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4600307320403010501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6882381312975801905
 GameObject:
   m_ObjectHideFlags: 0
