@@ -7,13 +7,15 @@ public class SceneText : MonoBehaviour
     public GameObject HeadText;
     private void Update()
     {
-        if (HeadText.activeInHierarchy)
-        {
-            HeadText.SetActive(false);
-        }
-        else
-        {
-            HeadText.SetActive(true);
-        }
+        if (Input.GetKeyDown(KeyCode.W)){
+            if (HeadText.activeInHierarchy)
+            {
+                HeadText.SetActive(false);
+            }
+            else
+            {
+                HeadText.SetActive(true);
+            }
+         }
     }
 }
