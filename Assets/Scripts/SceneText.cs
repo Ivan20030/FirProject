@@ -11,8 +11,8 @@ public class SceneText : MonoBehaviour
     public GameObject HeadText;
     private void Update()
     {
-        if (InputDevices.GetDeviceAtXRNode(XRNode.RightHand).TryGetFeatureValue(CommonUsages.secondary2DAxis, out Vector2 axisValue)){// || Input.GetKeyDown(KeyCode.W)){
-            if (HeadText.activeInHierarchy)
+        if (InputDevices.GetDeviceAtXRNode(XRNode.RightHand).TryGetFeatureValue(CommonUsages.secondary2DAxis, out Vector2 axisValue)|| Input.GetKeyDown(KeyCode.W)){
+            if ((axisValue != Vector2.zero && HeadText.activeInHierarchy))
             {
                 HeadText.SetActive(false);
             }
