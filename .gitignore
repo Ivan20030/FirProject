@@ -70,3 +70,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Oculus/Spatializer/Plugins/x86_64/AudioPluginOculusSpatializer.dll
+Assets/Oculus/Spatializer/Plugins/x86_64.meta
+Assets/Oculus/Spatializer/Plugins.meta
+Assets/Oculus/Spatializer.meta
+Assets/Oculus.meta
