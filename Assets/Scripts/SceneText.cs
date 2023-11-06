@@ -12,7 +12,7 @@ public class SceneText : MonoBehaviour
     public InputActionReference A;
     private void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.One) && A)
+        if (Input.GetKeyDown(KeyCode.W) || A)
         {
             if (HeadText.activeInHierarchy)
             {
