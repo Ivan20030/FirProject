@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CalendarManager : MonoBehaviour
 {
     [SerializeField]
-    private Text _textMonth;
+    private TMP_Text _textMonth;
     public int MonthNumber { get; private set; }
 
     private AudioSource _audioSource;
