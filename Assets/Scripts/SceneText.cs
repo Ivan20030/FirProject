@@ -9,18 +9,27 @@ public class SceneText : MonoBehaviour
 {
     public GameObject HeadText;
 
+    bool TriggerPressed;
+    bool TriggerPressing;
+
     public InputActionReference A;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) || A)
+        TriggerPressed = (A.action.ReadValue<float>() > 0.5f) && !TriggerPressing ? true : false;
+        TriggerPressing = (A.action.ReadValue<float>() > 0.5f) ? true : false;
+
+        if (TriggerPressed)
         {
-            if (HeadText.activeInHierarchy)
+            if (Input.GetKeyDown(KeyCode.W) || A)
             {
-                HeadText.SetActive(false);
-            }
-            else
-            {
-                HeadText.SetActive(true);
+                if (HeadText.activeInHierarchy)
+                {
+                    HeadText.SetActive(false);
+                }
+                else
+                {
+                    HeadText.SetActive(true);
+                }
             }
         }
     }
