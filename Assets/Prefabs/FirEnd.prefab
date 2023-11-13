@@ -1196,6 +1196,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2827326629798934225}
     m_Modifications:
+    - target: {fileID: 1753270419724560662, guid: c0a1bd4958127c1408f195c2713ccdc1, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4875288380191599806, guid: c0a1bd4958127c1408f195c2713ccdc1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.4784
@@ -1568,6 +1572,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2827326629798934225}
     m_Modifications:
+    - target: {fileID: 1753270419724560662, guid: c0a1bd4958127c1408f195c2713ccdc1, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753270419724560662, guid: c0a1bd4958127c1408f195c2713ccdc1, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4875288380191599806, guid: c0a1bd4958127c1408f195c2713ccdc1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0399
@@ -1611,6 +1623,14 @@ PrefabInstance:
     - target: {fileID: 5795105825297010411, guid: c0a1bd4958127c1408f195c2713ccdc1, type: 3}
       propertyPath: m_Name
       value: P_Shishka
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911397156326771659, guid: c0a1bd4958127c1408f195c2713ccdc1, type: 3}
+      propertyPath: m_ForceGravityOnDetach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911397156326771659, guid: c0a1bd4958127c1408f195c2713ccdc1, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

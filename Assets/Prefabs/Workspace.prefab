@@ -212,6 +212,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1450233812836453985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2543873282099504505}
+  m_Layer: 0
+  m_Name: Seed Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2543873282099504505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450233812836453985}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.519, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5669646024882427728}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1542425952914235960
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +770,8 @@ GameObject:
   - component: {fileID: 5269042212665645752}
   - component: {fileID: 2591385288921376608}
   - component: {fileID: 8382996603465648726}
+  - component: {fileID: 1849909774966264833}
+  - component: {fileID: 7460884010645672045}
   m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
@@ -758,7 +791,8 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1.294, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2543873282099504505}
   m_Father: {fileID: 2559198825907533907}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5269042212665645752
@@ -832,6 +866,45 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.8000004, y: 0.71455204, z: 0.8400004}
   m_Center: {x: 0.0000038146973, y: 0.351547, z: 0}
+--- !u!114 &1849909774966264833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036556732602699242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65da397bf3250b840a8aae6005547399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _seed: {fileID: 5810039565305496100, guid: 3cd2a22769b2dd34d9ab6150aec12495, type: 3}
+  _seedCount: 3
+  _seedSpawnPoint: {fileID: 2543873282099504505}
+  _spawnEffect: {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
+  _coneTag: Cone
+  _deltaSpawnTime: 3
+--- !u!65 &7460884010645672045
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036556732602699242}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8000004, y: 0.1, z: 0.8400004}
+  m_Center: {x: 0.0000038146973, y: 0.76, z: 0}
 --- !u!1 &6244367857968734841
 GameObject:
   m_ObjectHideFlags: 0
