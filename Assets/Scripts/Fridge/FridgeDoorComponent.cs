@@ -3,8 +3,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 enum FridgeDoorState 
 {
-    None = 0,
-    WantOpen,
+    WantOpen = 0,
     WantClose,
     Opened,
     Closed
@@ -24,7 +23,7 @@ public class FridgeDoorComponent : MonoBehaviour
                     _doorState = FridgeDoorState.Opened;
                     break;
                 }
-                transform.Rotate(0, -180 * Time.deltaTime, 0);
+                transform.Rotate(0, -200 * Time.deltaTime, 0);
                 break;
             case FridgeDoorState.WantClose:
                 if (transform.localRotation.y >= Quaternion.Euler(0.0f, 142.0f, 0.0f).y)
@@ -32,7 +31,7 @@ public class FridgeDoorComponent : MonoBehaviour
                     _doorState = FridgeDoorState.Closed;
                     break;
                 }
-                transform.Rotate(0, 180 * Time.deltaTime, 0);
+                transform.Rotate(0, 200 * Time.deltaTime, 0);
                 break;
         }
     }
