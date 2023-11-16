@@ -12,27 +12,28 @@ enum FridgeDoorState
 public class FridgeDoorComponent : MonoBehaviour
 {
     private FridgeDoorState _doorState = FridgeDoorState.Closed;
+    private Quaternion _startDoorRotation = Quaternion.identity;
+    private Quaternion _destinationDoorRotation = Quaternion.identity;
+    private XRGrabInteractable _interactable;
+    private float _timeCount = 0.0f;
+
+    private void Start()
+    {
+        _interactable = GetComponent<XRGrabInteractable>();
+    }
 
     void Update()
     {
-        switch (_doorState)
+        if (_doorState == FridgeDoorState.Opened || _doorState == FridgeDoorState.Closed) return;
+
+        transform.localRotation = Quaternion.Lerp(_startDoorRotation, _destinationDoorRotation, _timeCount);
+        _timeCount += Time.deltaTime;
+        if (_timeCount >= 1.0f)
         {
-            case FridgeDoorState.WantOpen:
-                if (transform.localRotation.y <= Quaternion.Euler(0.0f, 0.0f, 0.0f).y)
-                {
-                    _doorState = FridgeDoorState.Opened;
-                    break;
-                }
-                transform.Rotate(0, -200 * Time.deltaTime, 0);
-                break;
-            case FridgeDoorState.WantClose:
-                if (transform.localRotation.y >= Quaternion.Euler(0.0f, 142.0f, 0.0f).y)
-                {
-                    _doorState = FridgeDoorState.Closed;
-                    break;
-                }
-                transform.Rotate(0, 200 * Time.deltaTime, 0);
-                break;
+            if (_doorState == FridgeDoorState.WantOpen) _doorState = FridgeDoorState.Opened;
+            else if (_doorState == FridgeDoorState.WantClose) _doorState = FridgeDoorState.Closed;
+            _interactable.enabled = true;
+            return;
         }
     }
 
@@ -42,10 +43,17 @@ public class FridgeDoorComponent : MonoBehaviour
         {
             case FridgeDoorState.Opened:
                 _doorState = FridgeDoorState.WantClose;
+                _destinationDoorRotation = Quaternion.Euler(0.0f, 142.0f, 0.0f);
                 break;
             case FridgeDoorState.Closed:
                 _doorState = FridgeDoorState.WantOpen;
+                _destinationDoorRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
                 break;
+            default:
+                return;
         }
+        _timeCount = 0;
+        _startDoorRotation = transform.localRotation;
+        _interactable.enabled = false;
     }
 }

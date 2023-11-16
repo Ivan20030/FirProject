@@ -1049,10 +1049,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1527676661305774341, guid: 69ea515237af79344bfa2a45380a1ddf, type: 3}
+      propertyPath: speed
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2445010564604129625, guid: 69ea515237af79344bfa2a45380a1ddf, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1964410816}
+    - target: {fileID: 2694523189613887935, guid: 69ea515237af79344bfa2a45380a1ddf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.32556817
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694523189613887935, guid: 69ea515237af79344bfa2a45380a1ddf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.94551855
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694523189613887935, guid: 69ea515237af79344bfa2a45380a1ddf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 142
+      objectReference: {fileID: 0}
     - target: {fileID: 2992230832172256475, guid: 69ea515237af79344bfa2a45380a1ddf, type: 3}
       propertyPath: m_fontSize
       value: 60
