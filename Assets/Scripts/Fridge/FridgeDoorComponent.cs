@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -11,16 +12,16 @@ enum FridgeDoorState
 
 public class FridgeDoorComponent : MonoBehaviour
 {
+    [SerializeField]
+    private TMP_Text Text1;
+
     private FridgeDoorState _doorState = FridgeDoorState.Closed;
     private Quaternion _startDoorRotation = Quaternion.identity;
     private Quaternion _destinationDoorRotation = Quaternion.identity;
     private XRGrabInteractable _interactable;
     private float _timeCount = 0.0f;
 
-    private void Start()
-    {
-        _interactable = GetComponent<XRGrabInteractable>();
-    }
+    private void Start() => _interactable = GetComponent<XRGrabInteractable>();
 
     void Update()
     {
