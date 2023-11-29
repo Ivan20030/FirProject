@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-enum FridgeDoorState 
+public enum FridgeDoorState 
 {
     WantOpen = 0,
     WantClose,
@@ -15,7 +15,7 @@ public class FridgeDoorComponent : MonoBehaviour
     [SerializeField]
     private TMP_Text Text1;
 
-    private FridgeDoorState _doorState = FridgeDoorState.Closed;
+    public FridgeDoorState DoorState { get; private set; } = FridgeDoorState.Closed;
     private Quaternion _startDoorRotation = Quaternion.identity;
     private Quaternion _destinationDoorRotation = Quaternion.identity;
     private XRGrabInteractable _interactable;
@@ -25,14 +25,14 @@ public class FridgeDoorComponent : MonoBehaviour
 
     void Update()
     {
-        if (_doorState == FridgeDoorState.Opened || _doorState == FridgeDoorState.Closed) return;
+        if (DoorState == FridgeDoorState.Opened || DoorState == FridgeDoorState.Closed) return;
 
         transform.localRotation = Quaternion.Lerp(_startDoorRotation, _destinationDoorRotation, _timeCount);
         _timeCount += Time.deltaTime;
         if (_timeCount >= 1.0f)
         {
-            if (_doorState == FridgeDoorState.WantOpen) _doorState = FridgeDoorState.Opened;
-            else if (_doorState == FridgeDoorState.WantClose) _doorState = FridgeDoorState.Closed;
+            if (DoorState == FridgeDoorState.WantOpen) DoorState = FridgeDoorState.Opened;
+            else if (DoorState == FridgeDoorState.WantClose) DoorState = FridgeDoorState.Closed;
             _interactable.enabled = true;
             return;
         }
@@ -40,14 +40,14 @@ public class FridgeDoorComponent : MonoBehaviour
 
     public void OpenDoor(SelectExitEventArgs context)
     {
-        switch (_doorState)
+        switch (DoorState)
         {
             case FridgeDoorState.Opened:
-                _doorState = FridgeDoorState.WantClose;
+                DoorState = FridgeDoorState.WantClose;
                 _destinationDoorRotation = Quaternion.Euler(0.0f, 142.0f, 0.0f);
                 break;
             case FridgeDoorState.Closed:
-                _doorState = FridgeDoorState.WantOpen;
+                DoorState = FridgeDoorState.WantOpen;
                 _destinationDoorRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
                 break;
             default:
