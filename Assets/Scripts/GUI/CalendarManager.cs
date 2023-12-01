@@ -12,7 +12,7 @@ public class CalendarManager : MonoBehaviour
 
     private void Start()
     {
-        MonthNumber = Random.Range(1, 13);
+        MonthNumber = 12;
         _textMonth.text = MonthNumberConvertToString(MonthNumber);
         _audioSource = GetComponent<AudioSource>();
     }

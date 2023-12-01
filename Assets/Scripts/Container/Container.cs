@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Container : MonoBehaviour
@@ -22,12 +19,8 @@ public class Container : MonoBehaviour
             if (other.tag != "Seed" || grabComponent.isSelected) return;
             if (SeedsCount < _seedsPoints.Length)
             {
-                //_seedsPoints[SeedsCount].GetComponent<MeshRenderer>().material = other.GetComponent<MeshRenderer>().material;
-                GameObject seed = other.gameObject;
-                seed.transform.parent = _seedsPoints[SeedsCount];
-                seed.transform.localPosition = Vector3.zero;
-                seed.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-                seed.GetComponent<Rigidbody>().isKinematic = true;
+                _seedsPoints[SeedsCount].GetComponent<MeshRenderer>().enabled = true;
+                Destroy(other.gameObject);
             }
             SeedsCount++;
         }
@@ -45,8 +38,7 @@ public class Container : MonoBehaviour
         SeedsCount = 0;
         foreach (Transform seed in _seedsPoints)
         {
-            Material[] materials = seed.GetComponent<MeshRenderer>().materials;
-            Array.Clear(materials, 0, materials.Length);
+            seed.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }

@@ -17,24 +17,28 @@ public class FrozenSeedSpawnComponent : MonoBehaviour
     private GameObject _seedModel;
     [SerializeField]
     private FridgeDoorComponent _door;
+    [SerializeField]
+    private GameObject _spawnEffect;
 
     private Container _container = null;
 
     private void FixedUpdate()
     {
-        /*if (_door.DoorState == FridgeDoorState.Closed && _container)
+        if (_door.DoorState == FridgeDoorState.Closed && _container)
         {
             _container.transform.position = _containerSpawnPoint.position;
             _container.transform.rotation = Quaternion.identity;
             int seedsCount = _container.SeedsCount;
-            //_container.Clear();
+            _container.Clear();
 
             for (int i = 0; i < seedsCount; i++)
             {
                 GameObject spawnedFrozenSeed = Instantiate(_seedModel, _seedSpawnPoint.position, Quaternion.identity);
                 spawnedFrozenSeed.tag = "Frozen Seed";
             }
-        }*/
+
+            Instantiate(_spawnEffect, _containerSpawnPoint.position, Quaternion.identity);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

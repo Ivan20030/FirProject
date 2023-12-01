@@ -7,6 +7,9 @@ TagManager:
   - Cone
   - Seed
   - Frozen Seed
+  - Pot with Seed
+  - Pot without Seed
+  - Tree in Pot
   layers:
   - Default
   - TransparentFX
