@@ -10,12 +10,30 @@ public class PotComponent : MonoBehaviour
     [SerializeField]
     private GameObject _fir;
 
+    [SerializeField]
+    private FirSpawn _firSpawn;
+
+    [SerializeField]
+    private SceneText _sceneText;
+
+    private bool Flag1 = true;
+    private bool Flag2 = true;
+
     private void Update()
     {
-        if (gameObject.tag == "Pot with Seed" && _calendarManager.MonthNumber == 3)
+        if (Flag2 && gameObject.tag == "Pot with Seed" && _calendarManager.MonthNumber == 3)
         {
             _fir.SetActive(true);
             gameObject.tag = "Tree in Pot";
+
+            if (Flag2)
+            {
+                _sceneText.SetTreeState(TreeState.calendar);
+                _sceneText.setFirstFlag(true);
+                Flag2 = false;
+            }
+
+            _firSpawn.SpawnArrow();
         }
     }
 
@@ -26,6 +44,13 @@ public class PotComponent : MonoBehaviour
         {
             Destroy(other.gameObject);
             gameObject.tag = "Pot with Seed";
+
+            if (Flag1)
+            {
+                _sceneText.SetTreeState(TreeState.soil);
+                _sceneText.setFirstFlag(true);
+                Flag1 = false;
+            }
         }
     }
 }

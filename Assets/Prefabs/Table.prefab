@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 0
   m_Name: Seed Spawn Point
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3600902076202758687}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.519, z: 0}
+  m_LocalPosition: {x: 0, y: 1.292, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60,14 +60,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8244354394427342515}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.8870109, z: -0, w: 0.46174863}
+  m_LocalRotation: {x: 0, y: 0.8870109, z: 0, w: 0.46174863}
   m_LocalPosition: {x: 58, y: 0.394, z: 56}
   m_LocalScale: {x: 1.3950977, y: 1.2029096, z: 1.2547535}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5869012834768601555}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 125, z: 0}
 --- !u!33 &7053596780160938575
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -157,6 +157,7 @@ MonoBehaviour:
   _spawnEffect: {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
   _coneTag: Cone
   _deltaSpawnTime: 3
+  sceneText: {fileID: 0}
 --- !u!65 &1971779212430959891
 BoxCollider:
   m_ObjectHideFlags: 0
