@@ -23,13 +23,13 @@ public class Container : MonoBehaviour
                 Destroy(other.gameObject);
             }
             SeedsCount++;
-        }
 
-        if (firstFlag1 && SeedsCount >= _seedsPoints.Length)
-        {
-            sceneText.SetTreeState(TreeState.fridge);
-            sceneText.setFirstFlag(true);
-            firstFlag1 = false;
+            if (firstFlag1)
+            {
+                sceneText.SetTreeState(TreeState.fridge);
+                sceneText.setFirstFlag(true);
+                firstFlag1 = false;
+            }
         }
     }
 
